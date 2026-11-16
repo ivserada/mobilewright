@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+mobilewright-report/
+playwright-report/
+blob-report/
+.env
+.DS_Store
+test-assignment
+app

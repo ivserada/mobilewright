@@ -1,0 +1,27 @@
+{
+  "name": "mobilewright-android-tests",
+  "version": "1.0.0",
+  "description": "Android end-to-end tests with Mobilewright",
+  "scripts": {
+    "test": "mobilewright test",
+    "test:list": "mobilewright test --list",
+    "test:report": "mobilewright test --reporter html",
+    "report": "mobilewright show-report",
+    "devices": "mobilewright devices",
+    "doctor": "mobilewright doctor --category android",
+    "inspect": "mobilewright inspect",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "devDependencies": {
+    "@mobilewright/test": "^0.0.69",
+    "@types/node": "^26.6.6",
+    "mobilewright": "^0.0.69",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
