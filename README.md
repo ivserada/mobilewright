@@ -1,6 +1,6 @@
 # Mobilewright Android tests
 
-Проект настроен для end-to-end тестов Android-приложения Vi (`com.vi`) через [Mobilewright](https://mobilewright.dev/docs/). APK `app/curr_converter.apk` автоматически устанавливается перед запуском. iOS в конфигурации не используется.
+Проект настроен для end-to-end тестов Android-приложения через [Mobilewright](https://mobilewright.dev/docs/). APK `app/name.apk` автоматически устанавливается перед запуском. iOS в конфигурации не используется.
 
 ## Требования
 
@@ -36,17 +36,17 @@ Application ID и путь к APK уже заданы в `mobilewright.config.ts
 
 ```sh
 export ANDROID_APP_ID='com.vi'
-export ANDROID_APK_PATH='./app/curr_converter.apk'
+export ANDROID_APK_PATH='./app/name.apk'
 ```
 
 Доступные настройки:
 
-| Переменная | Назначение |
-| --- | --- |
-| `ANDROID_APP_ID` | Application ID приложения; по умолчанию `com.vi`. |
+| Переменная            | Назначение                                                                                      |
+| --------------------- | ----------------------------------------------------------------------------------------------- |
+| `ANDROID_APP_ID`      | Application ID приложения.                                                                      |
 | `ANDROID_DEVICE_NAME` | Регулярное выражение для отображаемого имени устройства; по умолчанию `Medium Phone API 37\.0`. |
-| `ANDROID_DEVICE_ID` | Точный ID устройства; если задан, имеет приоритет над именем. |
-| `ANDROID_APK_PATH` | Путь к APK для автоматической установки; по умолчанию `./app/curr_converter.apk`. |
+| `ANDROID_DEVICE_ID`   | Точный ID устройства; если задан, имеет приоритет над именем.                                   |
+| `ANDROID_APK_PATH`    | Путь к APK для автоматической установки; по умолчанию `./app/name.apk`.                         |
 
 ID подключенного устройства можно посмотреть через `adb devices`. Например:
 
@@ -58,14 +58,14 @@ export ANDROID_DEVICE_ID='emulator-5554'
 
 Все 32 кейса VI-001…VI-054 из `specs/cases.md` разделены по секциям:
 
-| Файл | Покрытие | Количество |
-| --- | --- | ---: |
-| `tests/conversion.spec.ts` | Запуск и базовая конвертация, VI-001…VI-008 | 8 |
-| `tests/currency-selection.spec.ts` | Выбор и поиск валют, VI-010…VI-018 | 9 |
-| `tests/currency-swap.spec.ts` | Обмен валют, VI-020…VI-022 | 3 |
-| `tests/amount-validation.spec.ts` | Формат суммы, VI-030…VI-033 | 4 |
-| `tests/network.spec.ts` | Сеть и кэш курсов, VI-040…VI-042 | 3 |
-| `tests/app-state-accessibility.spec.ts` | Состояние, ориентация, клавиатура и accessibility, VI-050…VI-054 | 5 |
+| Файл                                    | Покрытие                                                         | Количество |
+| --------------------------------------- | ---------------------------------------------------------------- | ---------: |
+| `tests/conversion.spec.ts`              | Запуск и базовая конвертация, VI-001…VI-008                      |          8 |
+| `tests/currency-selection.spec.ts`      | Выбор и поиск валют, VI-010…VI-018                               |          9 |
+| `tests/currency-swap.spec.ts`           | Обмен валют, VI-020…VI-022                                       |          3 |
+| `tests/amount-validation.spec.ts`       | Формат суммы, VI-030…VI-033                                      |          4 |
+| `tests/network.spec.ts`                 | Сеть и кэш курсов, VI-040…VI-042                                 |          3 |
+| `tests/app-state-accessibility.spec.ts` | Состояние, ориентация, клавиатура и accessibility, VI-050…VI-054 |          5 |
 
 Общие действия, проверки курсов, layout-assertions и ADB-команды находятся в `tests/helpers.ts`.
 
